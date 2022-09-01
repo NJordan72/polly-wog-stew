@@ -32,10 +32,10 @@ export function isSHA256(value: unknown): boolean {
   );
 }
 
-export class ValidationScore {
+export class ValidationScore<T> {
   constructor(
-    public readonly values: Array<any>,
-    public readonly validator: (value: any) => boolean,
+    public readonly values: Array<T | null>,
+    public readonly validator: (value: unknown) => boolean,
     public readonly ignoreNull: boolean = true,
   ) {}
 

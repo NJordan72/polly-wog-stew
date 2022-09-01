@@ -38,7 +38,7 @@ describe('ValidationScore', () => {
 
   it('can return a score for a fully populated array', () => {
     expect(
-      new ValidationScore(
+      new ValidationScore<string>(
         [
           '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
           '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
@@ -48,7 +48,7 @@ describe('ValidationScore', () => {
     ).toBe(1);
 
     expect(
-      new ValidationScore(
+      new ValidationScore<string>(
         [
           '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
           'polly-wog-stew',
@@ -60,7 +60,7 @@ describe('ValidationScore', () => {
 
   it('can return a score for an array with nulls', () => {
     expect(
-      new ValidationScore(
+      new ValidationScore<string>(
         [
           '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
           '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
@@ -71,7 +71,7 @@ describe('ValidationScore', () => {
     ).toBe(1);
 
     expect(
-      new ValidationScore(
+      new ValidationScore<string>(
         [
           '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
           'polly-wog-stew',
@@ -82,7 +82,7 @@ describe('ValidationScore', () => {
     ).toBe(0.5);
 
     expect(
-      new ValidationScore(
+      new ValidationScore<string>(
         [
           '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
           '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
