@@ -4,8 +4,7 @@
 [![License](https://badgen.net/github/license/NJordan72/polly-wog-stew)](./LICENSE)
 [![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/polly-wog-stew)](https://bundlephobia.com/package/polly-wog-stew)
 [![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/polly-wog-stew)](https://bundlephobia.com/package/polly-wog-stew)
-
-<!-- [![Package dependency count](https://badgen.net/bundlephobia/dependency-count/react[libraryName])](https://bundlephobia.com/package/polly-wog-stew) -->
+[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/polly-wog-stew)](https://bundlephobia.com/package/polly-wog-stew)
 
 ## Installation
 
