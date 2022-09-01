@@ -1,10 +1,11 @@
 # [libraryNameWithSpacesAndUpperCases]
 
-[![Continuous Integrations](https://github.com/[repositoryOwner]/[repositoryName]/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml)
-[![License](https://badgen.net/github/license/[repositoryOwner]/[repositoryName])](./LICENSE)
-[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
-[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
-[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/react[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
+[![Continuous Integrations](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml)
+[![License](https://badgen.net/github/license/NJordan72/polly-wog-stew)](./LICENSE)
+[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/polly-wog-stew)](https://bundlephobia.com/package/polly-wog-stew)
+[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/polly-wog-stew)](https://bundlephobia.com/package/polly-wog-stew)
+
+<!-- [![Package dependency count](https://badgen.net/bundlephobia/dependency-count/react[libraryName])](https://bundlephobia.com/package/polly-wog-stew) -->
 
 ## Installation
 
