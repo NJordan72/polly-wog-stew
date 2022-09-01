@@ -59,5 +59,8 @@
   "bugs": {
     "url": "https://github.com/NJordan72/polly-wog-stew/issues"
   },
-  "homepage": "https://github.com/NJordan72/polly-wog-stew#readme"
+  "homepage": "https://github.com/NJordan72/polly-wog-stew#readme",
+  "dependencies": {
+    "email-validator": "^2.0.4"
+  }
 }

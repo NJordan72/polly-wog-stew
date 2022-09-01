@@ -1,4 +1,4 @@
-import { isSHA256, ValidationScore } from './';
+import { isSHA256, ValidationScore, isEmail } from './';
 
 describe('isSHA256', () => {
   it('returns `true` for values valid strings', () => {
@@ -101,5 +101,21 @@ describe('ValidationScore', () => {
       0,
     );
     expect(new ValidationScore([1, 2, 3], isSHA256).validate()).toBe(0);
+  });
+});
+
+describe('isEmail', () => {
+  it('returns `true` for values valid strings', () => {
+    expect(isEmail('testing@mgail.com')).toBe(true);
+    expect(isEmail('abc@def.io')).toBe(true);
+  });
+
+  it('returns `false` for values invalid strings', () => {
+    expect(isEmail('A8sa')).toBe(false);
+    expect(isEmail({})).toBe(false);
+    expect(isEmail(NaN)).toBe(false);
+    expect(isEmail('18L')).toBe(false);
+    expect(isEmail('a@b')).toBe(false);
+    expect(isEmail('b.d')).toBe(false);
   });
 });
