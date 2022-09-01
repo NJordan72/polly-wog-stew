@@ -1,20 +1,20 @@
 # [libraryNameWithSpacesAndUpperCases]
 
-[![Continuous Integrations](https://github.com/[repositoryOwner]/[repositoryName]/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/[repositoryOwner]/[repositoryName]/actions/workflows/continuous-integrations.yaml)
+[![Continuous Integrations](https://github.com/[repositoryOwner]/[repositoryName]/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml)
 [![License](https://badgen.net/github/license/[repositoryOwner]/[repositoryName])](./LICENSE)
-[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/[libraryName])](https://bundlephobia.com/package/[libraryName])
-[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/[libraryName])](https://bundlephobia.com/package/[libraryName])
-[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/react[libraryName])](https://bundlephobia.com/package/[libraryName])
+[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
+[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
+[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/react[libraryName])](https://bundlephobia.com/package/polly-wog-stew)
 
 ## Installation
 
 This library is published in the NPM registry and can be installed using any compatible package manager.
 
 ```sh
-npm install [libraryName] --save
+npm install polly-wog-stew --save
 
 # For Yarn, use the command below.
-yarn add [libraryName]
+yarn add polly-wog-stew
 ```
 
 ### Installation from CDN
@@ -23,14 +23,14 @@ This module has an UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ```html
 <!-- For UNPKG use the code below. -->
-<script src="https://unpkg.com/[libraryName]"></script>
+<script src="https://unpkg.com/polly-wog-stew"></script>
 
 <!-- For JSDelivr use the code below. -->
-<script src="https://cdn.jsdelivr.net/npm/[libraryName]"></script>
+<script src="https://cdn.jsdelivr.net/npm/polly-wog-stew"></script>
 
 <script>
   // UMD module is exposed through the "[libraryCamelCaseName]" global variable.
-  console.log([libraryCamelCaseName]);
+  console.log(pollyWogStew);
 </script>
 ```
 
