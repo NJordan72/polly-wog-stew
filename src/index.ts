@@ -23,3 +23,34 @@ export type NumberParseable = (number | string | boolean) & {
  */
 export const isNumberParseable = (value: unknown): value is NumberParseable =>
   !Number.isNaN(Number(value));
+
+export function isSHA256(value: unknown): boolean {
+  return (
+    typeof value === 'string' &&
+    value.length === 64 &&
+    RegExp(/^[A-Fa-f0-9]{64}$/).test(value)
+  );
+}
+
+export class ValidationScore {
+  constructor(
+    public readonly values: Array<any>,
+    public readonly validator: (value: any) => boolean,
+    public readonly ignoreNull: boolean = true,
+  ) {}
+
+  validate(): number {
+    const cleanedValues = this.ignoreNull
+      ? this.values.filter((v) => v !== null)
+      : this.values;
+
+    return (
+      cleanedValues.reduce((score, value) => {
+        if (this.ignoreNull && value === null) {
+          return score;
+        }
+        return this.validator(value) ? score + 1 : score;
+      }, 0) / cleanedValues.length
+    );
+  }
+}

@@ -1,16 +1,97 @@
-import { isNumberParseable } from './';
+import { isSHA256, ValidationScore } from './';
 
-describe('unit | isNumberParseable', () => {
-  it('returns `true` for values parseable number', () => {
-    expect(isNumberParseable('-7.5')).toBe(true);
-    expect(isNumberParseable(false)).toBe(true);
-    expect(isNumberParseable(1892)).toBe(true);
+describe('isSHA256', () => {
+  it('returns `true` for values valid strings', () => {
+    expect(
+      isSHA256(
+        '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+      ),
+    ).toBe(true);
+    expect(
+      isSHA256(
+        '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
+      ),
+    ).toBe(true);
   });
 
-  it('returns `false` for values non parseable to number', () => {
-    expect(isNumberParseable('A8sa')).toBe(false);
-    expect(isNumberParseable({})).toBe(false);
-    expect(isNumberParseable(NaN)).toBe(false);
-    expect(isNumberParseable('18L')).toBe(false);
+  it('returns `false` for values invalid strings', () => {
+    expect(isSHA256('A8sa')).toBe(false);
+    expect(isSHA256({})).toBe(false);
+    expect(isSHA256(NaN)).toBe(false);
+    expect(isSHA256('18L')).toBe(false);
+  });
+});
+
+describe('ValidationScore', () => {
+  it('can be initialized', () => {
+    expect(new ValidationScore([], () => true)).toBeInstanceOf(ValidationScore);
+    expect(new ValidationScore([], () => true, true)).toBeInstanceOf(
+      ValidationScore,
+    );
+    expect(new ValidationScore([], () => true, false)).toBeInstanceOf(
+      ValidationScore,
+    );
+    expect(new ValidationScore([], isSHA256, false)).toBeInstanceOf(
+      ValidationScore,
+    );
+  });
+
+  it('can return a score for a fully populated array', () => {
+    expect(
+      new ValidationScore(
+        [
+          '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+          '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
+        ],
+        isSHA256,
+      ).validate(),
+    ).toBe(1);
+
+    expect(
+      new ValidationScore(
+        [
+          '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+          'polly-wog-stew',
+        ],
+        isSHA256,
+      ).validate(),
+    ).toBe(0.5);
+  });
+
+  it('can return a score for an array with nulls', () => {
+    expect(
+      new ValidationScore(
+        [
+          '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+          '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
+          null,
+        ],
+        isSHA256,
+      ).validate(),
+    ).toBe(1);
+
+    expect(
+      new ValidationScore(
+        [
+          '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+          'polly-wog-stew',
+          null,
+        ],
+        isSHA256,
+      ).validate(),
+    ).toBe(0.5);
+
+    expect(
+      new ValidationScore(
+        [
+          '9a97983da36260110b9a4d79725381501d288a21dba7a8da93be0af0312e8b0c',
+          '1443e1f20fef3287734356324011fe84542416412232a4fe70d223aeec219e78',
+          null,
+          null,
+        ],
+        isSHA256,
+        false,
+      ).validate(),
+    ).toBe(0.5);
   });
 });
