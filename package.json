@@ -46,7 +46,6 @@
     "lint": "eslint \"*/**/*.{ts,js,json}\"",
     "lint:fix": "eslint \"*/**/*.{ts,js,json}\" --fix",
     "build": "rollup --config ./rollup.config.js",
-    "preCommit": "",
     "prepublishOnly": "npm run doc && npm run lint && npm run test && npm run build",
     "prepare": "husky install"
   },
@@ -65,8 +64,5 @@
   "homepage": "https://github.com/NJordan72/polly-wog-stew#readme",
   "dependencies": {
     "email-validator": "^2.0.4"
-  },
-  "pre-commit": [
-    "preCommit"
-  ]
+  }
 }
