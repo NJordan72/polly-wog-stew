@@ -30,7 +30,8 @@
     "lib": ["ES2020"],
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
