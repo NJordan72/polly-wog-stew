@@ -1,5 +1,3 @@
-import { validate } from 'email-validator';
-
 /**
  * Returns if a string is a valid email
  *
@@ -7,7 +5,28 @@ import { validate } from 'email-validator';
  * @returns `true` if we think it is an email otherwise `false`
  */
 export function isEmail(value: unknown): boolean {
-  return typeof value === 'string' && validate(value);
+  if (!value || typeof value !== 'string') return false;
+  const emailParts = value.split('@');
+  if (emailParts.length !== 2) return false;
+
+  const account = emailParts[0];
+  const address = emailParts[1];
+  if (!account || account.length > 64) return false;
+  else if (!address || address.length > 255) return false;
+
+  const domainParts = address.split('.');
+  if (
+    domainParts.some(function (part) {
+      return part.length > 63;
+    })
+  )
+    return false;
+
+  const tester =
+    /^[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+  if (!tester.test(value)) return false;
+
+  return true;
 }
 
 /**
