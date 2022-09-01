@@ -94,4 +94,12 @@ describe('ValidationScore', () => {
       ).validate(),
     ).toBe(0.5);
   });
+
+  it('Can handles values of the wrong type passed to it', () => {
+    expect(new ValidationScore<number>([1, 2, 3], isSHA256).validate()).toBe(0);
+    expect(new ValidationScore<unknown>([1, 2, 3], isSHA256).validate()).toBe(
+      0,
+    );
+    expect(new ValidationScore([1, 2, 3], isSHA256).validate()).toBe(0);
+  });
 });
