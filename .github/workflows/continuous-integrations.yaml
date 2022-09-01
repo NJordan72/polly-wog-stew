@@ -46,6 +46,7 @@ jobs:
         run: 'npm run build'
 
   npm-build-publish:
+    needs: [lint, test, bundle]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
