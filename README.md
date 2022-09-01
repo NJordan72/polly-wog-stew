@@ -1,4 +1,4 @@
-# [libraryNameWithSpacesAndUpperCases]
+# Polly Wog Stew
 
 [![Continuous Integrations](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/NJordan72/polly-wog-stew/actions/workflows/continuous-integrations.yaml)
 [![License](https://badgen.net/github/license/NJordan72/polly-wog-stew)](./LICENSE)
