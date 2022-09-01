@@ -44,3 +44,22 @@ jobs:
 
       - name: 'Execute the build script'
         run: 'npm run build'
+
+  npm-build-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@master
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 16.x
+          registry-url: ' https://registry.npmjs.org'
+      - run: npm install
+      - run: npm run build
+        env:
+          CI: true
+      - name: npm version and publish
+        uses: geemanjs/conventional-changelog-npm-publish@1.0.0
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
