@@ -1,6 +1,6 @@
 {
   "out": "./docs",
-  "name": "[libraryNameWithSpacesAndUpperCases]",
+  "name": "Polly Wog Stew",
   "theme": "markdown",
   "readme": "none",
   "tsconfig": "./tsconfig.bundle.json"
