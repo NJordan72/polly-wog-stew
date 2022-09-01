@@ -1,12 +1,14 @@
-[[libraryNameWithSpacesAndUpperCases]](../README.md) / ValidationScore
+[Polly Wog Stew](../README.md) / ValidationScore
 
 # Class: ValidationScore<T\>
 
+A class that handles non boolean validation scores.
+
 ## Type parameters
 
-| Name |
-| :------ |
-| `T` |
+| Name | Description |
+| :------ | :------ |
+| `T` |  |
 
 ## Table of contents
 
@@ -38,15 +40,15 @@
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `values` | (``null`` \| `T`)[] | `undefined` |
-| `validator` | (`value`: `unknown`) => `boolean` | `undefined` |
-| `ignoreNull` | `boolean` | `true` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `values` | (``null`` \| `T`)[] | `undefined` | The values to validate |
+| `validator` | (`value`: `unknown`) => `boolean` | `undefined` | A function that will act as the validator |
+| `ignoreNull` | `boolean` | `true` | Defines if we should ignore null values in our final score |
 
 #### Defined in
 
-[index.ts:16](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L16)
+[index.ts:38](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L38)
 
 ## Properties
 
@@ -56,7 +58,7 @@
 
 #### Defined in
 
-[index.ts:19](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L19)
+[index.ts:41](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L41)
 
 ___
 
@@ -80,7 +82,7 @@ ___
 
 #### Defined in
 
-[index.ts:18](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L18)
+[index.ts:40](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L40)
 
 ___
 
@@ -90,7 +92,7 @@ ___
 
 #### Defined in
 
-[index.ts:17](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L17)
+[index.ts:39](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L39)
 
 ## Methods
 
@@ -98,10 +100,14 @@ ___
 
 ▸ **validate**(): `number`
 
+Returns a number betwen 0-1 representing the percentage of values that are valid
+
 #### Returns
 
 `number`
 
+the percentage of values that are valid
+
 #### Defined in
 
-[index.ts:22](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L22)
+[index.ts:49](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L49)

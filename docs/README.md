@@ -1,6 +1,6 @@
-[libraryNameWithSpacesAndUpperCases]
+Polly Wog Stew
 
-# [libraryNameWithSpacesAndUpperCases]
+# Polly Wog Stew
 
 ## Table of contents
 
@@ -19,19 +19,23 @@
 
 ▸ **isEmail**(`value`): `boolean`
 
+Returns if a string is a valid email
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | The value to validate |
 
 #### Returns
 
 `boolean`
 
+`true` if we think it is an email otherwise `false`
+
 #### Defined in
 
-[index.ts:3](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L3)
+[index.ts:9](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L9)
 
 ___
 
@@ -39,16 +43,20 @@ ___
 
 ▸ **isSHA256**(`value`): `boolean`
 
+Returns if a string is a valid hex encoded sha256 hash
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | The value to validate |
 
 #### Returns
 
 `boolean`
 
+`true` if we think it is a sha256 otherwise `false`
+
 #### Defined in
 
-[index.ts:7](https://github.com/NJordan72/polly-wog-stew/blob/0b79a52/src/index.ts#L7)
+[index.ts:19](https://github.com/NJordan72/polly-wog-stew/blob/529b68e/src/index.ts#L19)
